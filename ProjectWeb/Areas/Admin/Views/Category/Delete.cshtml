@@ -1,0 +1,20 @@
+﻿@model Category
+<p>Edit Category</p>
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="mb-3 row">
+			<label asp-for="Name"></label>
+			<input disabled asp-for="Name" />
+		</div>
+		<div class="mb-3 row">
+			<label asp-for="Description"></label>
+			<input disabled asp-for="Description" />
+		</div>
+		<div class="mb-3 row">
+			<label asp-for="DisplayPriority"></label>
+			<input disabled asp-for="DisplayPriority" />
+		</div>
+		<button type="submit" class="btn btn-danger">Delete</button>
+		<a asp-controller="Category" asp-action="Index" class="btn btn-primary">Return</a>
+	</div>
+</form>

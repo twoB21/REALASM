@@ -1,0 +1,27 @@
+﻿@model List<Category>
+<partial name="_Notification"/>
+<h3>This is Category Management Section</h3>
+<a asp-controller="Category" asp-action="Add" class="btn btn-primary">Add new Category</a>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>DisplayPriority</td>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var category in Model)
+		{
+			<tr>
+				<td>@category.Name</td>
+				<td>@category.Description</td>
+				<td>@category.DisplayPriority</td>
+				<td>
+					<a asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="btn btn-primary">Edit</a>
+					<a asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-danger">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
