@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Employer\Controllers\" />
+    <Folder Include="Areas\Employer\Views\" />
+    <Folder Include="Migrations\" />
     <Folder Include="wwwroot\image\books\" />
   </ItemGroup>
 
