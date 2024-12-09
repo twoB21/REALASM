@@ -1,0 +1,29 @@
+﻿@model List<ProjectWeb.Models.JobListing>
+
+<a class="btn btn-primary" href="@Url.Action("Add", "Employer")">Add New Job Listing</a>
+
+<partial name="_Notification" />
+<a asp-controller="Employer" asp-action="Add" class="btn btn-primary">Add new Post</a>
+
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Title</td>
+			<td>Description</td>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var job in Model)
+		{
+			<tr>
+                <td>@job.Title</td>
+                <td>@job.Description</td>
+				<td>
+					<a asp-controller="Employer" asp-action="Edit" asp-route-id="@job.Id" class="btn btn-primary">Edit</a>
+					<a asp-controller="Employer" asp-action="Delete" asp-route-id="@job.Id" class="btn btn-danger">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
